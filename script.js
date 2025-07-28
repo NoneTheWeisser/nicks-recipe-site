@@ -1,17 +1,26 @@
+// Determine the base path depending on where the HTML file is
+const basePath =
+  window.location.hostname === "nonetheweisser.github.io"
+    ? "/nicks-recipe-site/" // For GitHub Pages
+    : "/"; // For local testing
 // DOM ready log
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM is loaded!");
 
-  // Load partials (No need to prepend basePath)
-  loadPartial("nav-placeholder", "partials/nav.html");
-  loadPartial("cta-placeholder", "partials/cta.html");
-  loadPartial("footer-placeholder", "partials/footer.html");
+  // Log basePath for debugging
+  console.log("Base path:", basePath);
+
+  // Load partials (nav, cta, footer) with correct base path
+  loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
+  loadPartial("cta-placeholder", `${basePath}partials/cta.html`);
+  loadPartial("footer-placeholder", `${basePath}partials/footer.html`);
 
   // Check if .info-cards exists before building the recipe cards
   const container = document.querySelector(".info-cards");
 
   if (container) {
-    fetch("recipes.json")
+    // Build Recipe Cards
+    fetch(`${basePath}recipes.json`)
       .then((res) => res.json())
       .then((data) => {
         container.innerHTML = ""; // Clear existing HTML
@@ -20,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
           const card = document.createElement("div");
           card.classList.add("card");
 
+          // Use basePath for constructing dynamic recipe card links
           card.innerHTML = `
-            <a href="${recipe.link}">
-              <img class="card-image" src="${recipe.image}" alt="${recipe.category} Image">
+              <a href="${basePath}${recipe.link}">
+              <img class="card-image" src="${basePath}${recipe.image}" alt="${recipe.category} Image">
             </a>
             <p>${recipe.category}</p>
           `;
@@ -32,16 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((err) => console.error("Error loading recipes.json:", err));
   } else {
-    console.log('.info-cards not found on this page.');
+    console.log(".info-cards not found on this page.");
   }
 
-  // Fallback image logic
+  // Fallback image logic (for missing images)
   document.addEventListener(
     "error",
     function (e) {
       const target = e.target;
       if (target.tagName === "IMG") {
-        target.src = "img/default.jpg";
+        target.src = `${basePath}img/default.jpg`; // Fallback image
       }
     },
     true
@@ -50,10 +60,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load partials into placeholders
 function loadPartial(id, url) {
+  console.log(`Loading partial: ${url}`); // Debugging line
   fetch(url)
     .then((res) => res.text())
     .then((html) => {
       document.getElementById(id).innerHTML = html;
+
+      // Update nav links dynamically with the base path
+      const links = document.querySelectorAll(".nav-links a");
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+
+        if (href && !href.startsWith("/") && !href.startsWith("http")) {
+          link.href = `${basePath}${href}`;
+        }
+      });
+
+      // Update logo image dynamically, only if it's a relative path (not starting with / or http)
+      const logoImage = document.querySelector(".logo img");
+      if (logoImage) {
+        const originalSrc = logoImage.getAttribute("src");
+
+        if (!originalSrc.startsWith("/") && !originalSrc.startsWith("http")) {
+          logoImage.src = `${basePath}${originalSrc}`;
+        }
+      }
+      // Run JS that depends on those elements being present
+      if (id === "nav-placeholder") {
+        setupHamburgerMenu(); // Call hamburger logic after nav is loaded
+      }
     })
     .catch((err) => console.error(`Error loading ${url}:`, err));
+}
+
+// Hamburger menu setup
+function setupHamburgerMenu() {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  if (!hamburger || !navLinks) return;
+
+  // Set initial state of hamburger menu
+  hamburger.innerHTML = "&#9776;";
+  navLinks.classList.remove("show");
+  hamburger.classList.remove("open");
+
+  // Handle hamburger click
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    hamburger.classList.toggle("open");
+
+    hamburger.innerHTML = hamburger.classList.contains("open")
+      ? "&times;"
+      : "&#9776;";
+  });
+
+  // Close menu when nav link is clicked
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.classList.remove("open");
+      hamburger.innerHTML = "&#9776;";
+    });
+  });
 }
