@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Buffalo Chicken Dip",
+    "category": "Buffalo Chicken Dip",
+    "image": "img/buffdip.jpg",
+    "link": "recipes/buffalodip.html"
+  },
+  {
+    "title": "Zuppa Toscana",
+    "category": "Zuppa Toscana",
+    "image": "img/zuppa.jpg",
+    "link": "recipes/zuppa.html"
+  },
+  {
+    "title": "Garlic Pasta",
+    "category": "Garlic Chicken Pasta",
+    "image": "img/garlicpasta.jpeg",
+    "link": "recipes/garlicpasta.html"
+  },
+  {
+    "title": "Lemon Orzo Sausage",
+    "category": "One-Pot Orzo Sausage",
+    "image": "img/orzo.jpg",
+    "link": "recipes/orzo.html"
+  },
+  {
+    "title": "Steak and Cheese Tacos",
+    "category": "Steak and Cheese Tacos",
+    "image": "img/steaktacos.jpg",
+    "link": "recipes/steaktacos.html"
+  }
+]

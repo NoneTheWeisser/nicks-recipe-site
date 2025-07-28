@@ -1,0 +1,496 @@
+/* Global styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
+/* Header section */
+.header {
+  background-color: #1f2037;
+  color: aliceblue;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  color: aliceblue;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.logo img {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+}
+
+/* header mobile section */
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .nav-links {
+    width: 100%;
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+}
+
+/* Hero section */
+.hero {
+  background-color: #1f2037;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  /* if I want to have this section a different size uncomment the below */
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  /* margin-top: 20px; */
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background-color: #3882f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Image inside the hero section */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+/* Quote Section */
+.quote {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  padding: 50px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.quote blockquote {
+  max-width: 700px;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.quote blockquote p {
+  margin: 0;
+  /* text-align: center; */
+}
+
+.quote blockquote cite {
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: right;
+  font-style: normal;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* mobile quote */
+@media (max-width: 600px) {
+  .quote blockquote {
+    font-size: 16px;
+  }
+
+  .quote blockquote cite {
+    font-size: 14px;
+  }
+}
+
+/* Information/card section */
+.info {
+  padding: 60px 20px;
+  background-color: white;
+  color: #333;
+}
+
+.info h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.card {
+  max-width: 200px;
+  text-align: center;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 3px solid #3882f6;
+  border-radius: 10px;
+  margin: 0 auto 10px;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-top: -2px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    max-width: 60%;
+    margin-bottom: 20px;
+  }
+}
+/*stack on smaller screen */
+
+.cta {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 40px;
+  background-color: #3882f6;
+  color: white;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.cta-text {
+  flex: 1;
+}
+
+.cta-text h3 {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.cta-text p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}
+
+.footer {
+  background-color: #1f2037;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cta-box button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* mobile cta */
+@media (max-width: 600px) {
+  .cta-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cta-box button {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+.hamburger {
+  display: block;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Nav links default */
+/* .nav-links {
+  display: flex;
+  gap: 20px;
+} */
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1f2037;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 999;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-radius: 5px; 
+}
+
+.nav-links.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* .hamburger.open {
+    content: "X";
+  } */
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #1f2037;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    /* pointer-events: none; */
+  }
+
+  .nav-links.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  .header {
+    position: relative;
+  }
+}
+
+/* Recipe Pages */
+
+.recipe-content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #1f2037;
+  line-height: 1.6;
+}
+
+.recipe-content h1 {
+  font-size: 32px;
+  color: #3882f6;
+  margin-bottom: 20px;
+  font-family: serif;
+}
+
+.recipe-content h2,
+.recipe-content h4 {
+  margin-top: 30px;
+  color: #1f2037;
+}
+
+.recipe-content ul,
+.recipe-content ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the area, may crop slightly */
+}
+
+/* Print button for recipes */
+
+/* Align the recipe title and button */
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.print {
+  padding: 10px 10px;
+  background-color: #3882f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.print:hover {
+  background-color: #3882f6;
+}
+
+@media print {
+  body {
+    background: none;
+  }
+  header,
+  footer,
+  nav {
+    display: none;
+  }
+}
+
