@@ -57,12 +57,22 @@ if (container) {
 });
 
 // Load partials into placeholders
+// Load partials
+loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
+
+// After loading nav
 function loadPartial(id, url) {
   console.log(`Loading partial: ${url}`);  // Debugging line
   fetch(url)
     .then((res) => res.text())
     .then((html) => {
       document.getElementById(id).innerHTML = html;
+
+      // Update nav links dynamically
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        link.href = basePath + link.getAttribute('href');
+      });
 
       // Run JS that depends on those elements being present
       if (id === "nav-placeholder") {
@@ -71,6 +81,7 @@ function loadPartial(id, url) {
     })
     .catch((err) => console.error(`Error loading ${url}:`, err));
 }
+
 
 // Hamburger menu setup
 function setupHamburgerMenu() {
