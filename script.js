@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM is loaded!");
 
   // Get base path depending on where the HTML file is
-  const basePath = window.location.pathname.includes("/recipes/") ? "../" : "";
+  const basePath = window.location.hostname === 'nonetheweisser.github.io' 
+                   ? '/nicks-recipe-site/' 
+                   : '';
 
   // Load partials
   loadPartial("nav-placeholder", `${basePath}partials/nav.html`, basePath);
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (container) {
     // Build Recipe Cards
-    fetch("recipes.json")
+    fetch(`${basePath}recipes.json`)
       .then((res) => res.json())
       .then((data) => {
         container.innerHTML = ""; // Clear existing HTML
@@ -25,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
           card.classList.add("card");
 
           card.innerHTML = `
-            <a href="${recipe.link}">
-              <img class="card-image" src="${recipe.image}" alt="${recipe.category} Image">
+            <a href="${basePath}${recipe.link}">
+              <img class="card-image" src="${basePath}${recipe.image}" alt="${recipe.category} Image">
             </a>
             <p>${recipe.category}</p>
           `;
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function (e) {
       const target = e.target;
       if (target.tagName === "IMG") {
-        target.src = "img/default.jpg";
+        target.src = `${basePath}img/default.jpg`;
       }
     },
     true
@@ -65,6 +67,12 @@ function loadPartial(id, url, basePath) {
       links.forEach(link => {
         link.href = basePath + link.getAttribute('href');
       });
+
+      // Update logo image dynamically
+      const logoImage = document.querySelector(".logo img");
+      if (logoImage) {
+        logoImage.src = basePath + logoImage.getAttribute("src");
+      }
 
       // Run JS that depends on those elements being present
       if (id === "nav-placeholder") {
