@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const basePath = window.location.pathname.includes("/recipes/") ? "../" : "";
 
   // Load partials
-  loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
-  loadPartial("cta-placeholder", `${basePath}partials/cta.html`);
-  loadPartial("footer-placeholder", `${basePath}partials/footer.html`);
+  loadPartial("nav-placeholder", `${basePath}partials/nav.html`, basePath);
+  loadPartial("cta-placeholder", `${basePath}partials/cta.html`, basePath);
+  loadPartial("footer-placeholder", `${basePath}partials/footer.html`, basePath);
 
   // Check if .info-cards exists before building the recipe cards
   const container = document.querySelector(".info-cards");
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Load partials into placeholders
-function loadPartial(id, url) {
+function loadPartial(id, url, basePath) {
   console.log(`Loading partial: ${url}`);  // Debugging line
   fetch(url)
     .then((res) => res.text())
