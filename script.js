@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Get base path depending on where the HTML file is
   const basePath = window.location.hostname === 'nonetheweisser.github.io' 
-                   ? '/nicks-recipe-site/' 
-                   : '';
+                    ? '/nicks-recipe-site' // Ensure no trailing slash
+                    : '';
 
   // Load partials
-  loadPartial("nav-placeholder", `${basePath}partials/nav.html`, basePath);
-  loadPartial("cta-placeholder", `${basePath}partials/cta.html`, basePath);
-  loadPartial("footer-placeholder", `${basePath}partials/footer.html`, basePath);
+  loadPartial("nav-placeholder", `${basePath}/partials/nav.html`, basePath);
+  loadPartial("cta-placeholder", `${basePath}/partials/cta.html`, basePath);
+  loadPartial("footer-placeholder", `${basePath}/partials/footer.html`, basePath);
 
   // Check if .info-cards exists before building the recipe cards
   const container = document.querySelector(".info-cards");
 
   if (container) {
     // Build Recipe Cards
-    fetch(`${basePath}recipes.json`)
+    fetch(`${basePath}/recipes.json`)
       .then((res) => res.json())
       .then((data) => {
         container.innerHTML = ""; // Clear existing HTML
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function (e) {
       const target = e.target;
       if (target.tagName === "IMG") {
-        target.src = `${basePath}img/default.jpg`;
+        target.src = `${basePath}/img/default.jpg`;
       }
     },
     true
@@ -65,13 +65,13 @@ function loadPartial(id, url, basePath) {
       // Update nav links dynamically
       const links = document.querySelectorAll('.nav-links a');
       links.forEach(link => {
-        link.href = basePath + link.getAttribute('href');
+        link.href = `${basePath}${link.getAttribute('href')}`;
       });
 
       // Update logo image dynamically
       const logoImage = document.querySelector(".logo img");
       if (logoImage) {
-        logoImage.src = basePath + logoImage.getAttribute("src");
+        logoImage.src = `${basePath}${logoImage.getAttribute("src")}`;
       }
 
       // Run JS that depends on those elements being present
