@@ -49,6 +49,7 @@ if (container) {
       const target = e.target;
       if (target.tagName === "IMG") {
         target.src = "img/default.jpg";
+        
       }
     },
     true
