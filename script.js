@@ -3,44 +3,41 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM is loaded!");
 
   // Get base path depending on where the HTML file is
-const basePath = window.location.pathname.includes("/recipes/") ? "../" : "";
+  const basePath = window.location.pathname.includes("/recipes/") ? "../" : "";
 
   // Load partials
   loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
   loadPartial("cta-placeholder", `${basePath}partials/cta.html`);
   loadPartial("footer-placeholder", `${basePath}partials/footer.html`);
 
+  // Check if .info-cards exists before building the recipe cards
+  const container = document.querySelector(".info-cards");
 
-// Check if .info-cards exists before building the recipe cards
-const container = document.querySelector(".info-cards");
+  if (container) {
+    // Build Recipe Cards
+    fetch("recipes.json")
+      .then((res) => res.json())
+      .then((data) => {
+        container.innerHTML = ""; // Clear existing HTML
 
-if (container) {
-  // Build Recipe Cards
-  fetch("recipes.json")
-  // fetch("../recipes.json")
-    .then((res) => res.json())
-    .then((data) => {
-      container.innerHTML = ""; // Clear existing HTML
+        data.forEach((recipe) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
 
-      data.forEach((recipe) => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+          card.innerHTML = `
+            <a href="${recipe.link}">
+              <img class="card-image" src="${recipe.image}" alt="${recipe.category} Image">
+            </a>
+            <p>${recipe.category}</p>
+          `;
 
-        card.innerHTML = `
-          <a href="${recipe.link}">
-            <img class="card-image" src="${recipe.image}" alt="${recipe.category} Image">
-          </a>
-          <p>${recipe.category}</p>
-        `;
-
-        container.appendChild(card);
-      });
-    })
-    .catch((err) => console.error("Error loading recipes.json:", err));
-} else {
-  console.log('.info-cards not found on this page.');
-}
-
+          container.appendChild(card);
+        });
+      })
+      .catch((err) => console.error("Error loading recipes.json:", err));
+  } else {
+    console.log('.info-cards not found on this page.');
+  }
 
   // Fallback image logic
   document.addEventListener(
@@ -49,7 +46,6 @@ if (container) {
       const target = e.target;
       if (target.tagName === "IMG") {
         target.src = "img/default.jpg";
-        
       }
     },
     true
@@ -57,10 +53,6 @@ if (container) {
 });
 
 // Load partials into placeholders
-// Load partials
-loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
-
-// After loading nav
 function loadPartial(id, url) {
   console.log(`Loading partial: ${url}`);  // Debugging line
   fetch(url)
@@ -81,7 +73,6 @@ function loadPartial(id, url) {
     })
     .catch((err) => console.error(`Error loading ${url}:`, err));
 }
-
 
 // Hamburger menu setup
 function setupHamburgerMenu() {
