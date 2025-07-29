@@ -567,11 +567,12 @@ display: grid;
 
 .info-list {
   list-style: none;
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 10px 40px; 
   padding-top: 10px;
-  margin: 0 60px; 
+  margin: 0 auto; 
   max-width: 500px; 
 }
 
