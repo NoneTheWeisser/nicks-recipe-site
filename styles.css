@@ -252,6 +252,7 @@ body {
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
+  margin-top: -60px;
 }
 
 .cta-text {
@@ -459,6 +460,51 @@ body {
   object-fit: cover; /* Fills the area, may crop slightly */
 }
 
+/* Recipe information Section */
+.info-box {
+  background-color: #e6f4ff; /* light blue */
+  border-radius: 12px;
+  padding: 40px;
+  margin: 60px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.info-box h2 {
+  padding-left: 10px;
+  color: #3882f6;
+  margin-top: 15px;
+}
+
+.info-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 40px; 
+  padding-top: 10px;
+  margin: 0 auto; 
+  max-width: 500px; 
+}
+
+.info-list li {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* info section mobile */
+@media (max-width: 600px) {
+  .info-list {
+    grid-template-columns: 1fr; /* stack in one column */
+    gap: 8px 0; /* smaller vertical spacing */
+    padding: 0 20px; /* optional horizontal padding */
+  }
+
+  .info-box h2 {
+    padding-left: 20px; /* reduce heading indent for small screens */
+    text-align: center; /* optional for balance */
+  }
+}
+
+
+
 /* Print button for recipes */
 
 /* Align the recipe title and button */
@@ -470,7 +516,7 @@ body {
 }
 
 .print {
-  padding: 10px 10px;
+  padding: 6px 30px;
   background-color: #3882f6;
   color: white;
   border: none;
@@ -479,8 +525,22 @@ body {
   cursor: pointer;
 }
 
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+/* Optional: make h2 behave nicely inside the flex */
+.info-header h2 {
+  margin: 0;
+  color: #3882f6;
+}
+
 .print:hover {
-  background-color: #3882f6;
+  background-color: #2563eb; 
 }
 
 @media print {

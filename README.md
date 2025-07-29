@@ -7,3 +7,14 @@ cooking logo credit: <a target="_blank" href="https://icons8.com/icon/4724/cutle
 
 
 buffalo chicken dip picture - https://thecookingjar.com/wp-content/uploads/2022/06/slow-cooker-buffalo-chicken-dip-1.jpg
+
+Recipe/Image links:
+Steak Tacos - https://cookinginthemidwest.com/blog/steak-cheese-tacos/
+Zuppa Toscana - https://www.garnishandglaze.com/zuppa-toscana-soup-recipe/
+Garlic Chicken Pasta - https://munchinwithmaddie.blog/garlic-parmesan-chicken-and-pasta/
+Buffalo Chicken Dip - https://sugarapron.com/2016/01/11/easy-buffalo-chicken-dip/
+One Pot Orzo - https://www.skinnytaste.com/one-pot-orzo-with-sausage-spinach-and-corn/
+White Chicken Chili - https://www.halfbakedharvest.com/creamy-white-chicken-chili/
+
+
+
