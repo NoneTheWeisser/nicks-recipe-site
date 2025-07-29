@@ -548,7 +548,6 @@ display: grid;
   margin-bottom: 10px;
 }
 
-/* Optional: make h2 behave nicely inside the flex */
 .info-header h2 {
   margin: 0;
   color: #3882f6;
@@ -558,14 +557,27 @@ display: grid;
   background-color: #2563eb; 
 }
 
-@media print {
-  body {
-    background: none;
-  }
-  header,
-  footer,
-  nav {
-    display: none;
-  }
+@media (max-width: 600px) {
+.info-header {
+  display: block;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 10px;
 }
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 40px; 
+  padding-top: 10px;
+  margin: 0 60px; 
+  max-width: 500px; 
+}
+
+}
+
+
+/* TO DO:
+for mobile, lets drop print to the end line. There are a few things we should clean up for the print section.  */
 
