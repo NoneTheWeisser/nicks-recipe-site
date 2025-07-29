@@ -504,19 +504,6 @@ display: grid;
   line-height: 1.4;
 }
 
-/* info section mobile */
-@media (max-width: 600px) {
-  .info-list {
-    grid-template-columns: 1fr; /* stack in one column */
-    gap: 8px 0; /* smaller vertical spacing */
-    padding: 0 20px; /* optional horizontal padding */
-  }
-
-  .info-box h2 {
-    padding-left: 20px; /* reduce heading indent for small screens */
-    text-align: center; /* optional for balance */
-  }
-}
 
 
 
@@ -557,28 +544,35 @@ display: grid;
   background-color: #2563eb; 
 }
 
+/* info/print section mobile */
 @media (max-width: 600px) {
-.info-header {
-  display: block;
-  text-align: center;
-  padding: 0 20px;
-  margin-bottom: 10px;
-}
-
-.info-list {
-  list-style: none;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px 40px; 
-  padding-top: 10px;
-  margin: 0 auto; 
-  max-width: 500px; 
-}
-
+  .info-list {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-content: space-around; */
+    display: inline-block;
+    text-align: left;
+    grid-template-columns: 1fr; 
+    gap: 8px 0; 
+    padding: 0 20px; 
+  }
+  .info-header {
+    display: block;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 10px;
+  }
+  
+  .info-box h2 {
+    padding: 20px; /* reduce heading indent for small screens */
+    text-align: center; /* optional for balance */
+  }
 }
 
 
 /* TO DO:
-for mobile, lets drop print to the end line. There are a few things we should clean up for the print section.  */
+for mobile, lets drop print to the end line. There are a few things we should clean up for the print section.
+
+Update, still need to get this the way we want. more testing needed.*/
+
 
