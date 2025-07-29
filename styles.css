@@ -197,6 +197,17 @@ body {
   text-align: center;
 }
 
+/* Once we get more and more recipes.. might look into a grid system, something like this 
+.info-cards {  
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+   */
+
 .card {
   max-width: 200px;
   text-align: center;
