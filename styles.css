@@ -232,6 +232,11 @@ body {
     max-width: 60%;
     margin-bottom: 20px;
   }
+
+  .info h2 {
+    font-size: 14px;
+    white-space: nowrap;
+  }
 }
 /*stack on smaller screen */
 
