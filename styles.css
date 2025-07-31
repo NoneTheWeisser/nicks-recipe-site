@@ -227,6 +227,8 @@ display: grid;
   font-weight: 500;
   color: #333;
   margin-top: -2px;
+  text-wrap: balance;
+
 }
 
 .card:hover {
@@ -235,20 +237,32 @@ display: grid;
 }
 
 @media (max-width: 600px) {
-  .info-cards {
+  /* .info-cards {
     flex-direction: column;
     align-items: center;
+  } */
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
   }
-  .card {
-    max-width: 60%;
-    margin-bottom: 20px;
+}
+
+/* text-wrap balance */
+  .card p {
+    font-size: 16px;
+    text-wrap: balance;
   }
 
   .info h2 {
-    font-size: 18px;
-    white-space: nowrap;
+    font-size: 22px;
+    text-wrap: balance;
+
   }
-}
+
 /*stack on smaller screen */
 
 .cta {
@@ -357,12 +371,12 @@ display: grid;
   text-decoration: none;
   color: white;
   cursor: pointer;
-  transition: background-color 0.2s ease; 
+  transition: background-color 0.2s ease;
 }
 
 .nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1); 
-  border-radius: 5px; 
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 .nav-links.show {
@@ -493,19 +507,16 @@ display: grid;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 10px 40px; 
+  gap: 10px 40px;
   padding-top: 10px;
-  margin: 0 auto; 
-  max-width: 500px; 
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .info-list li {
   font-size: 1rem;
   line-height: 1.4;
 }
-
-
-
 
 /* Print button for recipes */
 
@@ -541,7 +552,7 @@ display: grid;
 }
 
 .print:hover {
-  background-color: #2563eb; 
+  background-color: #2563eb;
 }
 
 /* info/print section mobile */
@@ -552,9 +563,9 @@ display: grid;
     align-content: space-around; */
     display: inline-block;
     text-align: left;
-    grid-template-columns: 1fr; 
-    gap: 8px 0; 
-    padding: 0 20px; 
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+    padding: 0 20px;
   }
   .info-header {
     display: block;
@@ -562,17 +573,17 @@ display: grid;
     padding: 0 20px;
     margin-bottom: 10px;
   }
-  
+
   .info-box h2 {
     padding: 20px; /* reduce heading indent for small screens */
     text-align: center; /* optional for balance */
   }
 }
 
-
-/* TO DO:
+/* 
+TO DO:
 for mobile, lets drop print to the end line. There are a few things we should clean up for the print section.
 
-Update, still need to get this the way we want. more testing needed.*/
+Update, still need to get this the way we want. more testing needed.
 
-
+*/
