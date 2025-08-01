@@ -441,6 +441,7 @@ display: grid;
 
 /* Recipe Pages */
 
+
 .recipe-content {
   padding: 40px 20px;
   max-width: 800px;
@@ -572,6 +573,8 @@ display: grid;
     grid-template-columns: 1fr;
     gap: 8px 0;
     padding: 0 20px;
+    text-wrap: balance;
+
   }
   .info-header {
     display: block;
@@ -584,6 +587,16 @@ display: grid;
     padding: 20px; /* reduce heading indent for small screens */
     text-align: center; /* optional for balance */
   }
+
+  .recipe-content h1 {
+  text-wrap: balance;
+  /* text-align: center; */
+}
+
+.info-header button {
+  /* padding-bottom: 20px; */
+  margin-bottom: 15px;
+}
 }
 
 /* 
