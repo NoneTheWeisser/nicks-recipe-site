@@ -17,6 +17,12 @@
     "image": "img/zuppa.jpg",
     "link": "recipes/zuppa.html"
   },
+    {
+    "title": "Cheeseburger Soup",
+    "category": "Cheeseburger Soup",
+    "image": "img/cheeseburger_soup.jpg",
+    "link": "recipes/cheeseburgersoup.html"
+  },
   {
     "title": "Garlic Pasta",
     "category": "Garlic Chicken Pasta",

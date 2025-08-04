@@ -53,6 +53,8 @@ body {
     left: 0;
     text-align: center;
   }
+
+
 }
 
 /* Hero section */
@@ -433,6 +435,7 @@ display: grid;
     color: white;
     margin: 10px 0;
     text-decoration: none;
+    font-size: 14px;
   }
   .header {
     position: relative;

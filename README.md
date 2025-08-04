@@ -17,6 +17,8 @@ One Pot Orzo - https://www.skinnytaste.com/one-pot-orzo-with-sausage-spinach-and
 White Chicken Chili - https://www.halfbakedharvest.com/creamy-white-chicken-chili/
 Ground Pork Pasta - https://www.realfoodwithsarah.com/spicy-rigatoni-with-ground-pork/
 Grilled Chicken Street Tacos - https://tastesbetterfromscratch.com/grilled-chicken-street-tacos/
+Cheeseburger Soup - https://therecipecritic.com/cheeseburger-soup/
+
 
 
 
