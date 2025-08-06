@@ -123,4 +123,24 @@ function setupHamburgerMenu() {
       hamburger.innerHTML = "&#9776;";
     });
   });
+
+  // Add in new recipe to hamburger bar dyamically
+  const basePath = window.location.pathname.includes("/recipes/") ? "../" : "";
+  fetch(`${basePath}recipes.json`)
+    .then((res) => res.json())
+    .then((recipes) => {
+      const container = document.getElementById("dynamic-recipe-links");
+      if (!container) return;
+
+      // sorting recipes alphabetically
+      recipes.sort((a,b) => a.category.localeCompare(b.category));
+
+      recipes.forEach((recipe) => {
+        const a = document.createElement("a");
+        a.href = basePath + recipe.link;
+        a.textContent = recipe.category;
+        container.appendChild(a);
+      });
+    })
+    .catch((err) => console.error("Failed to load recipes for nav:", err));
 }

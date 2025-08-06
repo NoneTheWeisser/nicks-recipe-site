@@ -52,5 +52,12 @@
     "category": "Grilled Chicken Street Tacos",
     "image": "img/grilledtaco.jpg",
     "link": "recipes/grilledtaco.html"
+  },
+  
+  {
+    "title": "Chicken and White Bean Enchiladas",
+    "category": "Chicken and White Bean Enchiladas",
+    "image": "img/ChickenEnchiladas.jpg",
+    "link": "recipes/chickenenchiladas.html"
   }
 ]

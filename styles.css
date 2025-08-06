@@ -299,6 +299,7 @@ display: grid;
 .cta-text h3 {
   margin: 0px;
   font-size: 20px;
+  text-wrap: balance;
 }
 
 .cta-text p {
@@ -458,6 +459,8 @@ display: grid;
   color: #3882f6;
   margin-bottom: 20px;
   font-family: serif;
+  text-wrap: balance;
+
 }
 
 .recipe-content h2,
