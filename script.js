@@ -7,8 +7,6 @@ const basePath =
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM is loaded!");
 
-  // Log basePath for debugging
-  console.log("Base path:", basePath);
 
   // Load partials (nav, cta, footer) with correct base path
   loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load partials into placeholders
 function loadPartial(id, url) {
-  console.log(`Loading partial: ${url}`); // Debugging line
+  // console.log(`Loading partial: ${url}`); // Debugging line
   fetch(url)
     .then((res) => res.text())
     .then((html) => {
@@ -100,7 +98,7 @@ function setupHamburgerMenu() {
 
   if (!hamburger || !navLinks) return;
 
-  // Set initial state of hamburger menu
+  // Set initial state of hamburger 
   hamburger.innerHTML = "&#9776;";
   navLinks.classList.remove("show");
   hamburger.classList.remove("open");
@@ -111,7 +109,9 @@ function setupHamburgerMenu() {
     hamburger.classList.toggle("open");
 
     hamburger.innerHTML = hamburger.classList.contains("open")
-      ? "&times;"
+    //  show close icon
+    ? "&times;"
+    // show hamburger icon
       : "&#9776;";
   });
 
