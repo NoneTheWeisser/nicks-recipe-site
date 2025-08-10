@@ -7,7 +7,6 @@ const basePath =
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM is loaded!");
 
-
   // Load partials (nav, cta, footer) with correct base path
   loadPartial("nav-placeholder", `${basePath}partials/nav.html`);
   loadPartial("cta-placeholder", `${basePath}partials/cta.html`);
@@ -98,7 +97,7 @@ function setupHamburgerMenu() {
 
   if (!hamburger || !navLinks) return;
 
-  // Set initial state of hamburger 
+  // Set initial state of hamburger
   hamburger.innerHTML = "&#9776;";
   navLinks.classList.remove("show");
   hamburger.classList.remove("open");
@@ -109,10 +108,10 @@ function setupHamburgerMenu() {
     hamburger.classList.toggle("open");
 
     hamburger.innerHTML = hamburger.classList.contains("open")
-    //  show close icon
-    ? "&times;"
-    // show hamburger icon
-      : "&#9776;";
+      ? //  show close icon
+        "&times;"
+      : // show hamburger icon
+        "&#9776;";
   });
 
   // Close menu when nav link is clicked
@@ -133,7 +132,7 @@ function setupHamburgerMenu() {
       if (!container) return;
 
       // sorting recipes alphabetically
-      recipes.sort((a,b) => a.category.localeCompare(b.category));
+      recipes.sort((a, b) => a.category.localeCompare(b.category));
 
       recipes.forEach((recipe) => {
         const a = document.createElement("a");
@@ -144,3 +143,36 @@ function setupHamburgerMenu() {
     })
     .catch((err) => console.error("Failed to load recipes for nav:", err));
 }
+
+// Trying a function to add list items in
+// this works but I can't keep doing it so need to take time and learn more about JSON
+function renderList(items, elementId) {
+  const target = document.getElementById(elementId);
+  target.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+}
+
+const ingredients = [
+"8 ounces cremini mushrooms",
+"1/2 medium red onion",
+"2 tablespoons coarsely chopped fresh rosemary leaves",
+"1 pound pre-cut (1-inch) butternut squash cubes (about 4 cups)",
+"1 pound fresh, shelf-stable, or frozen potato gnocchi",
+"1/4 cup olive oil",
+"1/2 teaspoon kosher salt",
+"1/4 teaspoon freshly ground black pepper",
+"8 ounces uncooked sweet or hot Italian sausage",
+"Grated Parmesan cheese, for serving"
+];
+
+const instructions = [
+  "Arrange 2 racks to divide the oven into thirds and heat the oven to 450°F.",
+"Quarter 8 ounces cremini mushrooms and place them on a rimmed baking sheet.Cut 1/2 medium red onion into 1-inch chunks and place on the baking sheet. Chop until you have 2 tablespoons fresh rosemary leaves and sprinkle over the vegetables.",
+"Add 1 pound cubed butternut squash (trim any large pieces into 1-inch pieces) and 1 pound potato gnocchi to the baking sheet. Drizzle everything with 1/4 cup olive oil, then sprinkle with 1/2 teaspoon kosher salt and 1/4 teaspoon black pepper. Toss to coat and spread the mixture into an even layer.",
+"Remove the casings from 8 ounces sweet or hot Italian sausages if needed. Drop bite-sized pieces of the sausage all over the top of the gnocchi mixture.",
+"Place the baking sheet on the lower rack. Roast, stirring halfway through, until the gnocchi are plump, the sausage is browned and cooked through, and the vegetables are tender, about 25 minutes total.",
+"Move the baking sheet to the upper rack and turn on the broiler. Broil until the gnocchi are lightly browned and crisp, 3 to 5 minutes. Serve garnished with grated Parmesan cheese, if desired."
+
+];
+
+renderList(ingredients, "ingredients-list");
+renderList(instructions, "instructions-list");

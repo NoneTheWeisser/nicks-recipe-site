@@ -59,5 +59,18 @@
     "category": "Chicken and White Bean Enchiladas",
     "image": "img/ChickenEnchiladas.jpg",
     "link": "recipes/chickenenchiladas.html"
+  },
+    {
+    "title": "Crock Pot Beef Stroganoff",
+    "category": "Crock Pot Beef Stroganoff",
+    "image": "img/slow-cooker-beef-stroganoff.jpg",
+    "link": "recipes/beefstroganoff.html"
+  },
+  {
+    "title": "Crispy Sheet Pan Gnocchi",
+    "category": "Crispy Sheet Pan Gnocchi",
+    "image": "img/sheetpangnocchi.jpg",
+    "link": "recipes/sheetpangnocchi.html"
   }
+  
 ]
