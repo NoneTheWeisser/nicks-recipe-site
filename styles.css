@@ -1,3 +1,11 @@
+/* optional color scheme
+French Laundry Blue: #3a4660
+Comfortably Tan: #c9af98
+Peachy Kreme: #ed8a63
+Brown Bonnet: #c9af98
+*/
+
+
 /* Global styles */
 body {
   font-family: "Roboto", sans-serif;
@@ -14,7 +22,7 @@ body {
 
 /* Header section */
 .header {
-  background-color: #1f2037;
+  background-color: #3a4660;
   color: aliceblue;
   padding: 20px;
   display: flex;
@@ -59,7 +67,7 @@ body {
 
 /* Hero section */
 .hero {
-  background-color: #1f2037;
+  background-color: #3a4660;
   color: aliceblue;
   display: flex;
   justify-content: center;
@@ -86,7 +94,7 @@ body {
 
 .hero-text button {
   padding: 10px 20px;
-  background-color: #3882f6;
+  background-color: #c9af98;
   color: white;
   border: none;
   border-radius: 5px;
@@ -225,7 +233,7 @@ display: grid;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 3px solid #3882f6;
+  border: 3px solid #c9af98;
   border-radius: 10px;
   margin: 0 auto 10px;
 }
@@ -285,12 +293,13 @@ display: grid;
   justify-content: space-between;
   gap: 20px;
   padding: 30px 40px;
-  background-color: #3882f6;
-  color: white;
+  background-color: #c9af98;
+  color:#845007;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
 }
+
 
 .cta-text {
   flex: 1;
@@ -308,7 +317,7 @@ display: grid;
 }
 
 .footer {
-  background-color: #1f2037;
+  background-color: #3a4660;
   padding: 10px;
   margin-top: 10px;
   color: white;
@@ -318,10 +327,10 @@ display: grid;
 
 .cta-box button {
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid #845007;
   padding: 10px 20px;
   border-radius: 5px;
-  color: white;
+  color: #845007;
   font-weight: bold;
   cursor: pointer;
   flex-shrink: 0;
@@ -360,7 +369,7 @@ display: grid;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #1f2037;
+  background-color: #3a4660;
   position: absolute;
   top: 70px;
   right: 20px;
@@ -412,7 +421,7 @@ display: grid;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: #1f2037;
+    background-color: #3a4660;
     position: absolute;
     top: 70px;
     right: 20px;
@@ -450,13 +459,13 @@ display: grid;
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
-  color: #1f2037;
+  color: #3a4660;
   line-height: 1.6;
 }
 
 .recipe-content h1 {
   font-size: 32px;
-  color: #3882f6;
+  color: #ed8a63;
   margin-bottom: 20px;
   font-family: serif;
   text-wrap: balance;
@@ -466,7 +475,7 @@ display: grid;
 .recipe-content h2,
 .recipe-content h4 {
   margin-top: 30px;
-  color: #1f2037;
+  color: #3a4660;
 }
 
 .recipe-content ul,
@@ -504,7 +513,7 @@ display: grid;
 
 /* Recipe information Section */
 .info-box {
-  background-color: #e6f4ff; /* light blue */
+  background-color: #3a4660;
   border-radius: 12px;
   padding: 40px;
   margin: 60px auto;
@@ -512,7 +521,7 @@ display: grid;
 }
 .info-box h2 {
   padding-left: 10px;
-  color: #3882f6;
+  color: #c9af98;
   margin-top: 15px;
 }
 
@@ -524,6 +533,8 @@ display: grid;
   padding-top: 10px;
   margin: 0 auto;
   max-width: 500px;
+  color: white;
+  /* color: #c9af98; */
 }
 
 .info-list li {
@@ -543,7 +554,7 @@ display: grid;
 
 .print {
   padding: 6px 30px;
-  background-color: #3882f6;
+  background-color: #c9af98;
   color: white;
   border: none;
   border-radius: 4px;
@@ -561,11 +572,22 @@ display: grid;
 
 .info-header h2 {
   margin: 0;
-  color: #3882f6;
+  color: white;
+  /* color:#c9af98; */
 }
 
+/*
+French Laundry Blue: #3a4660
+Comfortably Tan: #c9af98
+Peachy Kreme: #ed8a63
+Brown Bonnet: #845007
+*/
+
+
+
+
 .print:hover {
-  background-color: #2563eb;
+  background-color: #ed8a63;
 }
 
 /* info/print section mobile */
