@@ -649,8 +649,9 @@ Brown Bonnet: #845007
   }
 
   .info-box h2 {
-    padding: 20px; /* reduce heading indent for small screens */
-    text-align: center; /* optional for balance */
+    padding: 5px;
+    text-align: center; 
+
   }
 
   .recipe-content h1 {
@@ -672,7 +673,7 @@ Brown Bonnet: #845007
   }
 
   .print-button {
-    width: 100%;
+    width: 70%;
   }
 }
 
