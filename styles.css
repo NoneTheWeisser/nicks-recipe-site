@@ -287,7 +287,7 @@ display: grid;
   gap: 20px;
   padding: 30px 40px;
   background-color: #c9af98;
-  color: #845007;
+  color:#3a4660;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
@@ -319,10 +319,10 @@ display: grid;
 
 .cta-box button {
   background-color: transparent;
-  border: 2px solid #845007;
+  border: 2px solid #3a4660;
   padding: 10px 20px;
   border-radius: 5px;
-  color: #845007;
+  color: #3a4660;
   font-weight: bold;
   cursor: pointer;
   flex-shrink: 0;
