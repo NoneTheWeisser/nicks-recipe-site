@@ -9,7 +9,7 @@ working on what a landing page would look like. Going off of the odin flexbox pr
 cooking logo credit: <a target="_blank" href="https://icons8.com/icon/4724/cutlery">Cutlery</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 
-Recipe/Image links:
+# Recipe/Image links:
 Steak Tacos - https://cookinginthemidwest.com/blog/steak-cheese-tacos/
 Zuppa Toscana - https://www.garnishandglaze.com/zuppa-toscana-soup-recipe/
 Garlic Chicken Pasta - https://munchinwithmaddie.blog/garlic-parmesan-chicken-and-pasta/

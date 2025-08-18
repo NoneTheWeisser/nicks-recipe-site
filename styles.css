@@ -5,7 +5,6 @@ Peachy Kreme: #ed8a63
 Brown Bonnet: #c9af98
 */
 
-
 /* Global styles */
 body {
   font-family: "Roboto", sans-serif;
@@ -61,8 +60,6 @@ body {
     left: 0;
     text-align: center;
   }
-
-
 }
 
 /* Hero section */
@@ -128,7 +125,6 @@ body {
   .hero-text h1 {
     font-size: 28px;
     text-wrap: balance;
-
   }
 
   .hero-text p {
@@ -136,7 +132,6 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     text-wrap: balance;
-
   }
 
   .hero-image {
@@ -244,7 +239,6 @@ display: grid;
   color: #333;
   margin-top: -2px;
   text-wrap: balance;
-
 }
 
 .card:hover {
@@ -268,16 +262,15 @@ display: grid;
 }
 
 /* text-wrap balance */
-  .card p {
-    font-size: 16px;
-    text-wrap: balance;
-  }
+.card p {
+  font-size: 16px;
+  text-wrap: balance;
+}
 
-  .info h2 {
-    font-size: 22px;
-    text-wrap: balance;
-
-  }
+.info h2 {
+  font-size: 22px;
+  text-wrap: balance;
+}
 
 /*stack on smaller screen */
 
@@ -294,12 +287,11 @@ display: grid;
   gap: 20px;
   padding: 30px 40px;
   background-color: #c9af98;
-  color:#845007;
+  color: #845007;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
 }
-
 
 .cta-text {
   flex: 1;
@@ -454,12 +446,12 @@ display: grid;
 
 /* Recipe Pages */
 
-
 .recipe-content {
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
-  color: #3a4660;
+  color: black;
+  /* color: #3a4660; */
   line-height: 1.6;
 }
 
@@ -467,9 +459,8 @@ display: grid;
   font-size: 32px;
   color: #ed8a63;
   margin-bottom: 20px;
-  font-family: serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   text-wrap: balance;
-
 }
 
 .recipe-content h2,
@@ -552,14 +543,61 @@ display: grid;
   margin-bottom: 20px;
 }
 
-.print {
-  padding: 6px 30px;
+/* updated print and og link styles */
+.print-button {
   background-color: #c9af98;
+  font-size: 14px;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.print-button:hover {
+  background-color: #ed8a63;
+}
+
+
+
+/* old print settings - keeping for now since they work on the other pages */
+.print {
+  background-color: #c9af98;
+  border: none;
+  color: white;
+  padding: 7px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.print:hover {
+  background-color: #a68c77;
+}
+
+.print a:link,
+a:visited {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.print a:active {
+  background-color: #c9af98;
+}
+.print:hover {
+  background-color: #ed8a63;
 }
 
 .info-header {
@@ -568,6 +606,12 @@ display: grid;
   align-items: center;
   padding: 0 20px;
   margin-bottom: 10px;
+}
+
+.info-buttons {
+  display: flex;
+  gap: 10px;             
+  justify-content: flex-end; 
 }
 
 .info-header h2 {
@@ -584,12 +628,6 @@ Brown Bonnet: #845007
 */
 
 
-
-
-.print:hover {
-  background-color: #ed8a63;
-}
-
 /* info/print section mobile */
 @media (max-width: 600px) {
   .info-list {
@@ -602,7 +640,6 @@ Brown Bonnet: #845007
     gap: 8px 0;
     padding: 0 20px;
     text-wrap: balance;
-
   }
   .info-header {
     display: block;
@@ -617,14 +654,26 @@ Brown Bonnet: #845007
   }
 
   .recipe-content h1 {
-  text-wrap: balance;
-  /* text-align: center; */
-}
+    text-wrap: balance;
+    /* text-align: center; */
+  }
 
-.info-header button {
-  /* padding-bottom: 20px; */
-  margin-bottom: 15px;
-}
+  .info-header button {
+    /* padding-bottom: 20px; */
+    margin-bottom: 15px;
+  }
+
+  .info-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .print-button {
+    width: 100%;
+  }
 }
 
 /* 
