@@ -22,6 +22,8 @@ Cheeseburger Soup - https://therecipecritic.com/cheeseburger-soup/
 Chicken and White Bean Enchiladas - https://www.skinnytaste.com/chicken-and-white-bean-enchiladas-with/
 Crock Pot Beef Stroganoff - https://www.eazypeazymealz.com/crock-pot-beef-stroganoff/
 Crispy Sheet Pan Gnocchi - https://www.thekitchn.com/sheet-pan-gnocchi-mushrooms-sausage-squash-22955997
+Ground Beef and Broccoli Stir Fry - https://www.skinnytaste.com/ground-beef-and-broccoli-stir-fry/#recipe
+
 
 
 
